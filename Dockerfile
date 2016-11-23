@@ -10,3 +10,4 @@ RUN apk add --no-cache python3 && \
     rm -r /root/.cache
 
 USER jenkins
+COPY scp.key /tmp/scp.key
