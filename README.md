@@ -11,6 +11,7 @@
 
 * [jenkins:alpine](https://hub.docker.com/_/jenkins/)
 * Python
+* Python packages - requests python-jenkins
 
 ## Make It Short 
 The [official image repo](https://github.com/jenkinsci/docker) has a pretty comprehensive readme.
