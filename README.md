@@ -4,14 +4,12 @@
 
 ## Tags
 
-* latest, python2 [(Dockerfile)](https://github.com/manycoding/jenkins-python/blob/master/Dockerfile)
-* python3 [(Dockerfile)](https://github.com/manycoding/jenkins-python/blob/python3/Dockerfile)
+* latest [(Dockerfile)](https://github.com/manycoding/jenkins-python/blob/master/Dockerfile)
 
 ## What's Inside
 
-* [jenkins:alpine](https://hub.docker.com/_/jenkins/)
-* Python
-* Python packages - requests python-jenkins
+* [jenkins/jenkins:lts-alpine](https://hub.docker.com/r/jenkins/jenkins/)
+* Python3
 
 ## Make It Short 
 The [official image repo](https://github.com/jenkinsci/docker) has a pretty comprehensive readme.

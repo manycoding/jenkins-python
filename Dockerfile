@@ -1,12 +1,14 @@
-FROM jenkins:alpine
-MAINTAINER Valery M. <vamukhs@gmail.com>
+FROM jenkins/jenkins:lts-alpine
+MAINTAINER Valery M. <manycoding@users.noreply.github.com>
 
 USER root
 
-RUN apk add --no-cache python && \
-    python -m ensurepip && \
+RUN apk add --no-cache python3 && \
+    python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
-    pip install --upgrade pip setuptools requests python-jenkins && \
+    pip3 install --upgrade pip setuptools && \
+    if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
+    if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
     rm -r /root/.cache
 
 USER jenkins
