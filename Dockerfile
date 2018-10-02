@@ -13,9 +13,7 @@ RUN apk add --no-cache python3 python3-dev curl gcc g++ && \
     rm -r /root/.cache
 
 COPY requirements.txt /server_requirements.txt
-RUN PIP_INDEX_URL=http://172.17.42.1:3141/root/public/ \
-    PIP_TRUSTED_HOST=172.17.42.1 && \
-    pip install -U pipenv && \
+RUN pip install -U pipenv && \
     pip install --extra-index-url=https://pypi.python.org/simple/ --no-cache-dir -r /server_requirements.txt
 
 USER jenkins
