@@ -17,10 +17,21 @@ The [official image repo](https://github.com/jenkinsci/docker) has a pretty comp
 To create a master:
 
     $ docker run -d --name=jenkins -p 8080:8080 -p 50000:50000 -v \
-    $home:/var/jenkins_home --env JAVA_OPTS="-Dhudson.footerURL=$server_url \
-    -Dhudson.model.DirectoryBrowserSupport.CSP= -Duser.timezone=Europe/Moscow" \
+    jenkins_home:/var/jenkins_home --env JAVA_OPTS="-Dhudson.footerURL=$server_url \
+    -Dhudson.model.DirectoryBrowserSupport.CSP= \
+    -Duser.timezone=Europe/Moscow" \
     manycoding/jenkins-python
 
 To drop into the shell:
 
     $ docker run --rm -it manycoding/jenkins-python /bin/sh
+
+
+## Third-party python libraries
+
+Install with pipenv and export `requirements.txt`
+
+```
+pipenv update
+pipenv lock -r > requirements.txt
+```
