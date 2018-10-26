@@ -1,4 +1,4 @@
 configuration-as-code
 github-branch-source
 bitbucket
-shiningpanda:0.24
+shiningpanda
